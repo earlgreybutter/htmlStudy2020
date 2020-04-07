@@ -1,0 +1,15 @@
+
+	font {color:red; text-align:center; font-size:20px}
+	td {color:orange; text-align:center; font-size:5px; border:1px}
+	table {
+		width:600px; 
+		height:800px; 
+		border: 1px solid black;
+	}
+	h1 {color:green; text-align:center; }
+	h2 {color:blue; text-align:center; }
+	h3 {color:yellow; text-align:center; }
+	h4 {color:red; text-align:center; }
+	h5 {color:orange; text-align:center; }
+	h6 {color:purple; text-align:center; }
+

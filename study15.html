@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+<style type="text/css">
+	table {width:500px; height:500px; border:1px solid black;}
+	td.a {width:150px; border:1px solid black;}
+	td.formtop {text-align:center}
+	td.formbottom {text-align:center}
+</style>
+<script>
+	function formCheck(form){
+		// 유효성 검사 
+		if(form.myname.value == ""){
+			alert('이름을 기입하세요');
+			form.myname.focus();
+			return ;
+		}
+		if(form.title.value == ""){
+			alert('제목을 기입하세요');
+			form.title.focus();
+			return ;
+		}
+		if(form.pswd.value == ""){
+			alert('암호를 기입하세요');
+			form.pswd.focus();
+			return ;		
+		}
+		if(form.contents.value == ""){
+			alert('내용을 기입하세요');
+			form.contents.focus();
+			return ;
+		}
+
+		alert('당신이 입력한 정보는 \n'+
+			form.myname.value + '\n'+
+			form.title.value + '\n'+
+			form.pswd.value + '\n'+
+			form.contents.value + '\n'
+			);
+		
+	}
+</script>
+ </head>
+ <body>
+  <form method="post" action="">
+	<table>
+  <tr>
+	<td class="formtop" colspan = "2">글 입력하기</td>
+	<!--<td></td>-->
+  </tr>
+  <tr>
+	<td class="a">이름</td>
+	<td><input type="text" name="myname" size="20"></td>
+  </tr>
+  <tr>
+	<td>제목</td>
+	<td><input type="text" name="title" size="50"></td>
+  </tr>
+  <tr>
+	<td>암호</td>
+	<td><input type="password" name="pswd" size = "20"></td>
+  </tr>
+  <tr>
+	<td>내용</td>
+	<td><textarea name="contents" rows="10" cols="50"></textarea></td>
+  </tr>
+
+  <tr>
+	<td colspan="2" class="formbottom">
+		<input type="button" value="전송하기" onclick="formCheck(this.form)">
+		<input type="reset" value="다시쓰기">
+	</td>
+	<!--<td></td>-->
+  </tr>
+ 
+  </table>
+  </form>
+ </body>
+</html>
