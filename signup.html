@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>CB 회원가입 페이지</title>
+<style type="text/css">
+	table {width:30%; height:auto; 
+		border:5px solid #660066; background-color:#d0c1e1; 
+		text-align:left; margin:10px; padding:20px}
+	
+</style>
+<script>
+	function formCheck(form){
+		// 유효성 검사 
+		if(form.id.value == ""){
+			alert('아이디를 기입하세요');
+			form.id.focus();
+			return ;
+		}
+		if(form.myname.value == ""){
+			alert('이름을 기입하세요');
+			form.myname.focus();
+			return ;
+		}
+		if(form.email.value == ""){
+			alert('이메일을 기입하세요');
+			form.email.focus();
+			return ;
+		}
+		if(form.pswd.value == ""){
+			alert('암호를 기입하세요');
+			form.pswd.focus();
+			return ;		
+		}
+		if(form.contents.value == ""){
+			alert('자기소개를 기입하세요');
+			form.contents.focus();
+			return ;
+		}
+
+		alert( form.id.value+'('+
+			form.myname.value + ") 님의 \n 회원가입이 완료되었습니다."
+			);
+		
+	}
+
+	function passwordCheckFunc(){
+		var password = document.getElementById("pw").value;
+		var passwordCheck = document.getElementById("pwck").value;
+
+		if(passwordCheck==""){
+			document.getElementById("passwordCheckText").innerHTML=""
+		}
+		else if (password!=passwordCheck)
+		{
+			document.getElementById("passwordCheckText").innerHTML="일치하지 않습니다."
+		}
+		else{
+			document.getElementById("passwordCheckText").innerHTML="일치합니다. "
+		}
+	}
+		
+
+</script>
+ </head>
+ <body>
+ <center>
+ <h1> <font color="#3300cc">회원가입</font></h1>
+ <form>
+ <table>
+	<tr><p>*는 필수입력사항 입니다.</p></tr>
+  <tr>
+
+   <td>아이디* </td>
+   <td>
+   <input name="id" type = "text" >
+   <input type = "button" value = "중복확인">
+   </td>
+  </tr>
+
+
+
+  <tr>
+   <td> 비밀번호* </td>
+   <td> <input type = "password" id="pw" name="pswd"> </td>
+  </tr>
+
+
+  <tr>
+   <td> 비밀번호 확인 </td>
+   <td> <input type = "password"  id="pwck" name="pswdCheck" onkeyup="passwordCheckFunc()">&nbsp;*비밀번호를 다시입력해주세요. </td>
+	
+  </tr>
+	<tr>
+		<td></td>
+		<td id="passwordCheckText">
+	</tr>
+
+  <tr>
+   <td> 이름* </td>
+   <td> <input type = "text" name="myname"> </td>
+  </tr>
+
+
+  <tr>
+   <td> 성별 </td>
+   <td>
+    <input type = "radio" name = "gender" checked> 여자
+    <input type = "radio" name = "gender"> 남자
+   </td>
+  </tr>
+
+
+
+
+  <tr>
+   <td> 이메일* </td>
+   <td>
+    <input name="email" type = "text"> @ <input type = "text"> &nbsp;&nbsp;
+    <select>
+     <option> 직접입력 </option>
+     <option> naver.com </option>
+     <option> daum.net </option>
+     <option> gmail.com </option>
+    </select>
+
+   </td>
+  </tr>
+
+
+
+
+  <tr>
+   <td> 주소 </td>
+   <td>
+    <input type = "text">
+    <input type = "button" value = "주소찾기">
+   </td>
+  </tr>
+  <tr>
+   <td> 상세주소 </td>
+   <td>
+    <input type = "text">
+   </td>
+  </tr>
+
+
+
+  <tr>
+   <td> 휴대폰 </td>
+   <td>
+    <input type = "radio" name = "phone"> SKT
+    <input type = "radio" name = "phone"> KT
+    <input type = "radio" name = "phone"> LGU+
+    <input type = "radio" name = "phone"> 알뜰폰
+   <br/>
+    <select>
+     <option> 010 </option>
+     <option> 011 </option>
+     <option> 016 </option>
+     <option> 018 </option>
+    </select>
+    - <input type = "text" size = "6"> - <input type = "text" size = "6">
+   </td>
+  </tr>
+
+
+
+
+  <tr>
+   <td> 악기  </td>
+   <td>
+    <input type = "checkbox"> 바이올린
+    <input type = "checkbox"> 비올라
+    <input type = "checkbox"> 첼로
+    <input type = "checkbox"> 콘트라베이스
+   </td>
+  </tr>
+
+
+
+  <tr>
+   <td> 자기소개*  </td>
+   <td>
+    <textarea name="contents" cols = "60" rows = "10"></textarea>
+   </td>
+  </tr>
+
+<tr>
+	<td><input type = "button" value = "회원가입" onclick="formCheck(this.form)"></td>
+	<td><input type = "reset" value = "다시입력"></td>
+</tr>
+
+
+
+
+</table>
+ </form>
+
+</br>
+
+
+
+</center>
+</body>
+
+
+</html>
